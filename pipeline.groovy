@@ -12,7 +12,7 @@ pipeline {
                 script {
                     def dockerImage = docker.build(
                         context: '.',
-                        dockerfile: '/var/lib/jenkins/workspace/Docker/Dockerfile',
+                        dockerfile: '/home/ubuntu/Dockerfile',
                         tags: "testapp:${env.BUILD_ID}"
                     )
                 }
