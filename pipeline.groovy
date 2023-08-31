@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Pull') { 
             steps {
-                git branch: 'main', url: 'https://github.com/Vikas6409/dockpipe.git'
+                git branch: 'main', url: 'https://github.com/Prajwal2023/dockpipe-1.git'
             }
         }
        
@@ -12,7 +12,7 @@ pipeline {
                 script {
                     def dockerImage = docker.build(
                         context: '.',
-                        dockerfile: '/home/ec2-user/workspace/Docker/Dockerfile',
+                        dockerfile: '/home/ubuntu/workspace/Docker/Dockerfile',
                         tags: "testapp:${env.BUILD_ID}"
                     )
                 }
