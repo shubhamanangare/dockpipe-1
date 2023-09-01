@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Pull') { 
             steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/shubhamanangare/dockpipe-1.git']])
+             checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/shubhamanangare/dockpipe-1.git']])
             }
         }
        
