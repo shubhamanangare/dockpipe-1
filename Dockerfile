@@ -15,10 +15,10 @@ RUN yum -y update && \
 RUN yum -y install unzip
 
 # Download and extract Tomcat
-RUN wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.91/bin/apache-tomcat-8.5.91.zip && \
-    unzip apache-tomcat-8.5.91.zip -d /opt && \
-    rm apache-tomcat-8.5.91.zip && \
-    mv /opt/apache-tomcat-8.5.91 $CATALINA_HOME
+RUN wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.93/bin/apache-tomcat-8.5.93.zip && \
+    unzip apache-tomcat-8.5.93.zip -d /opt && \
+    rm apache-tomcat-8.5.93.zip && \
+    mv /opt/apache-tomcat-8.5.93 $CATALINA_HOME
 
 # Set executable permissions for catalina.sh
 RUN chmod +x $CATALINA_HOME/bin/catalina.sh
