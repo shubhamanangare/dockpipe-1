@@ -19,12 +19,15 @@ RUN wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.93/bin/apache-tomcat-8.5.
     unzip apache-tomcat-8.5.93.zip -d /opt && \
     rm apache-tomcat-8.5.93.zip && \
     mv /opt/apache-tomcat-8.5.93 $CATALINA_HOME
+WORKDIR /opt/tomcat
+ADD https://s3-us-west-2.amazonaws.com/studentapi-cit/student.war webapps/
+ADD https://s3-us-west-2.amazonaws.com/studentapi-cit/mysql-connector.jar lib/
 
 # Set executable permissions for catalina.sh
 RUN chmod +x $CATALINA_HOME/bin/catalina.sh
 
 # Expose the default Tomcat port
-EXPOSE 8000
+EXPOSE 8081
 
 # Set the command to start Tomcat
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]
